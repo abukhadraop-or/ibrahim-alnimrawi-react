@@ -3,6 +3,12 @@ import { TagsDiv, Tag, TagsContainer, PopTags, NotFound } from "./tags.style";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
+/**
+ * Render a <Input> component
+ *
+ * @param {Function} props.onTagChange Function to handle tag change.
+ * @param {Boolean} props.unClick      Boolean to check if tag un clicked.
+ */
 const Tags = ({ onTagChange, unClick }) => {
   const [tags, setTags] = useState([]);
   const [select, setSelect] = useState("");
@@ -39,6 +45,7 @@ const Tags = ({ onTagChange, unClick }) => {
   );
 };
 export default Tags;
+
 Tags.propTypes = {
   onTagChange: PropTypes.func,
   unClick: PropTypes.bool,

@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { SubmitButton, FormInput } from "components/Shared/Input/input.style";
 import React from "react";
+
+/**
+ * Render a <SignIn> component
+ */
 const SignIn = () => {
   return (
     <div>

@@ -1,5 +1,8 @@
 import { BannerDiv, BannerH1, BannerP } from "./banner.style";
 import React from "react";
+/**
+ * Render a <Banner> component
+ */
 const Banner = () => {
   return (
     <BannerDiv>

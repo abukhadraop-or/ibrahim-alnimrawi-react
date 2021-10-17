@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const BannerDiv = styled.div`
   align-items: center;
   background-color: #5cb85c;
