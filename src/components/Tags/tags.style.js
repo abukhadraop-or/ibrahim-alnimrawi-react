@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const TagsDiv = styled.div`
   align-items: center;
   border-radius: 0.25rem;
@@ -39,6 +40,7 @@ export const TagsContainer = styled.div`
   padding-bottom: 2rem;
   @media (max-width: 550px) {
     margin: 0 auto;
+    width: 100%;
   }
 `;
 export const NotFound = styled.div`

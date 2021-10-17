@@ -6,6 +6,15 @@ import {
   PaginateItem,
   ActiveItem,
 } from "./pagination.style";
+
+/**
+ * Render a <Pagination> component
+ *
+ * @param {Number} props.pageSize        The number of articles per page.
+ * @param {Number} props.currentPage     The current page number.
+ * @param {Function} props.onPageChange  Function to handle page change.
+ * @param {Number} props.itemCount       The number of articles.
+ */
 const Pagination = ({ pageSize, currentPage, onPageChange, itemsCount }) => {
   const numberOfPages = Math.ceil(itemsCount / pageSize);
   const pages = _.range(1, numberOfPages + 1);
@@ -28,6 +37,7 @@ const Pagination = ({ pageSize, currentPage, onPageChange, itemsCount }) => {
 };
 
 export default Pagination;
+
 Pagination.propTypes = {
   pageSize: PropTypes.number,
   currentPage: PropTypes.number,

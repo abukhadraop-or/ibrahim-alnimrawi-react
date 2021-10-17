@@ -3,10 +3,6 @@ import Pagination from "../Shared/Pagination/Pagination";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import {
-  getArticlesNumber,
-  paginateSlice,
-} from "../../services/fakeArticlesService";
-import {
   ArticleHeader,
   ArticleUser,
   ArticleDate,
@@ -20,12 +16,28 @@ import {
   NotFound,
   Container,
 } from "./articles.style";
+import {
+  getArticlesNumber,
+  paginateSlice,
+} from "../../services/fakeArticlesService";
 
+/**
+ * Handle date format.
+ *
+ * @param {string} originalDate Article created date.
+ *
+ * @return {string}             Date in the right format.
+ */
 const handleDate = (originalDate) => {
   const date = new Date(Date.parse(originalDate));
   return date.toDateString();
 };
 
+/**
+ * Render a <Articles> component
+ *
+ * @param {String} props.tag The name of the current tag.
+ */
 const Articles = ({ tag }) => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
@@ -88,6 +100,7 @@ const Articles = ({ tag }) => {
 };
 
 export default Articles;
+
 Articles.propTypes = {
   tag: PropTypes.string,
 };

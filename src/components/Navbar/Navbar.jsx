@@ -9,6 +9,12 @@ import {
   MenuLink,
   LinksContainer,
 } from "components/Navbar/nav-bar-style";
+
+/**
+ * Render a <Navbar> component
+ *
+ * @param {Array} props.links Array of the links.
+ */
 const NavBar = ({ links }) => {
   const [menu, setMenu] = useState(false);
   return (
@@ -42,6 +48,7 @@ const NavBar = ({ links }) => {
 };
 
 export default NavBar;
+
 NavBar.propTypes = {
   links: PropTypes.arrayOf(Object),
 };

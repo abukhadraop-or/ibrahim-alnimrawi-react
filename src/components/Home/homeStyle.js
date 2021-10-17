@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
   display: grid;
 `;
@@ -15,4 +16,11 @@ export const FeedUl = styled.ul`
   list-style: none;
   margin-bottom: 0;
   margin-left: 2.5rem;
+`;
+export const MediaContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 550px) {
+    flex-direction: column-reverse;
+  }
 `;
