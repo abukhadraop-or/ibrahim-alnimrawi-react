@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "../../../services/colors";
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -10,25 +11,17 @@ export const PaginateItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  color: #5cb85c;
-  border: 1px solid #ddd;
+  background-color: ${(props) =>
+    props.active ? `${colors.moderateLimeGreen}` : `${colors.white}`};
+  color: ${(props) =>
+    props.active ? `${colors.white}` : `${colors.moderateLimeGreen}`};
+  border: 0.063rem solid ${colors.veryLightGray};
   width: 2rem;
   height: 2rem;
   &:hover {
-    background-color: #ddd;
+    background-color: ${colors.veryLightGray};
   }
   &:active {
-    border: 1px solid #000;
+    border: 0.063rem solid ${colors.black};
   }
-`;
-export const ActiveItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5cb85c;
-  color: #fff;
-  border: 1px solid #ddd;
-  width: 2rem;
-  height: 2rem;
 `;

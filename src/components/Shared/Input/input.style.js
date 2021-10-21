@@ -1,10 +1,11 @@
-import styled from "styled-components";
 import Input from "components/Shared/Input/Input";
+import styled from "styled-components";
+import colors from "../../../services/colors";
 
 export const SubmitButton = styled.button`
-  background-color: #5cb85c;
+  background-color: ${colors.moderateLimeGreen};
   border: none;
-  color: #fff;
+  color: ${colors.white};
   width: 7rem;
   height: 3rem;
   border-radius: 0.3rem;

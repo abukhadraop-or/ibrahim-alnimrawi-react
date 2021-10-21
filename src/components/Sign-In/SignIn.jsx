@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
-import { SubmitButton, FormInput } from "components/Shared/Input/input.style";
+import { FormInput, SubmitButton } from "components/Shared/Input/input.style";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 /**
  * Render a <SignIn> component
+ *
+ * @return {JSX.Element}
  */
 const SignIn = () => {
   return (

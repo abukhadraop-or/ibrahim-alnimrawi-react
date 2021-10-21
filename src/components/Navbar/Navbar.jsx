@@ -1,19 +1,21 @@
-import PropTypes from "prop-types";
-import React, { useState } from "react";
 import {
+  LeftLink,
+  LinksContainer,
+  Menu,
+  MenuBar,
+  MenuLink,
   NavContainer,
   RightLink,
-  LeftLink,
-  MenuBar,
-  Menu,
-  MenuLink,
-  LinksContainer,
-} from "components/Navbar/nav-bar-style";
+} from "components/Navbar/navbar.style";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 
 /**
  * Render a <Navbar> component
  *
  * @param {Array} props.links Array of the links.
+ *
+ * @return {JSX.Element}
  */
 const NavBar = ({ links }) => {
   const [menu, setMenu] = useState(false);

@@ -1,9 +1,10 @@
+import mediaQueries from "services/mediaQueries";
 import styled from "styled-components";
-
+import colors from "../..//services/colors";
 export const TagsDiv = styled.div`
   align-items: center;
   border-radius: 0.25rem;
-  color: #373a3c;
+  color: ${colors.veryDarkGrayishBlue};
   display: flex;
   height: 3rem;
   justify-content: center;
@@ -12,10 +13,13 @@ export const TagsDiv = styled.div`
 `;
 export const Tag = styled.div`
   align-items: center;
-  background-color: ${(props) => (props.selected ? `#2F3236` : `#7d858e`)};
+  background-color: ${(props) =>
+    props.selected
+      ? `${colors.veryDarkGrayishBlue3}`
+      : `${colors.darkGrayishBlue}`};
   border-radius: 0.35rem;
   border: none;
-  color: #fff;
+  color: ${colors.white};
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -30,7 +34,7 @@ export const PopTags = styled.div`
   flex-wrap: wrap;
 `;
 export const TagsContainer = styled.div`
-  background-color: #f3f3f3;
+  background-color: ${colors.veryLightGray_mostlyWhite};
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -38,12 +42,12 @@ export const TagsContainer = styled.div`
   margin-right: 3rem;
   max-width: 20rem;
   padding-bottom: 2rem;
-  @media (max-width: 550px) {
+  @media (max-width: ${mediaQueries.mobile}) {
     margin: 0 auto;
     width: 100%;
   }
 `;
 export const NotFound = styled.div`
-  color: #373a3c;
+  color: ${colors.veryDarkGrayishBlue};
   margin: 1rem 3rem;
 `;

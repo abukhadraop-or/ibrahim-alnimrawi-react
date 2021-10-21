@@ -1,7 +1,9 @@
-import { BannerDiv, BannerH1, BannerP } from "./banner.style";
 import React from "react";
+import { BannerDiv, BannerH1, BannerP } from "./banner.style";
 /**
  * Render a <Banner> component
+ *
+ * @return {JSX.Element}
  */
 const Banner = () => {
   return (

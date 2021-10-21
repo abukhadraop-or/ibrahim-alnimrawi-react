@@ -1,25 +1,25 @@
 import LikeButton from "components/Shared/LikeButton/LikeButton";
-import Pagination from "../Shared/Pagination/Pagination";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
-import {
-  ArticleHeader,
-  ArticleUser,
-  ArticleDate,
-  ArticleSubContainer,
-  ArticleUserImage,
-  Article,
-  ArticleTitle,
-  ArticleDescription,
-  ArticleReadMore,
-  ArticleContainer,
-  NotFound,
-  Container,
-} from "./articles.style";
 import {
   getArticlesNumber,
   paginateSlice,
 } from "../../services/fakeArticlesService";
+import Pagination from "../Shared/Pagination/Pagination";
+import {
+  Article,
+  ArticleContainer,
+  ArticleDate,
+  ArticleDescription,
+  ArticleHeader,
+  ArticleReadMore,
+  ArticleSubContainer,
+  ArticleTitle,
+  ArticleUser,
+  ArticleUserImage,
+  Container,
+  NotFound,
+} from "./articles.style";
 
 /**
  * Handle date format.
@@ -37,6 +37,8 @@ const handleDate = (originalDate) => {
  * Render a <Articles> component
  *
  * @param {String} props.tag The name of the current tag.
+ *
+ * @return {JSX.Element}
  */
 const Articles = ({ tag }) => {
   const [articles, setArticles] = useState([]);

@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
+import colors from "../../services/colors";
 export const BannerDiv = styled.div`
   align-items: center;
-  background-color: #5cb85c;
+  background-color: ${colors.moderateLimeGreen};
   border: none;
   box-shadow: inset 0 0.5rem 0.5rem -0.5rem rgb(0 0 0 / 30%),
     inset 0 -0.5rem 0.5rem -0.5rem rgb(0 0 0 / 30%);
-  color: #ffff;
+  color: ${colors.white};
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;

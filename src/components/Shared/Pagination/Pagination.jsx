@@ -1,11 +1,7 @@
-import React from "react";
 import _ from "lodash";
 import PropTypes from "prop-types";
-import {
-  PaginationContainer,
-  PaginateItem,
-  ActiveItem,
-} from "./pagination.style";
+import React from "react";
+import { PaginateItem, PaginationContainer } from "./pagination.style";
 
 /**
  * Render a <Pagination> component
@@ -14,6 +10,8 @@ import {
  * @param {Number} props.currentPage     The current page number.
  * @param {Function} props.onPageChange  Function to handle page change.
  * @param {Number} props.itemCount       The number of articles.
+ *
+ * @return {JSX.Element}
  */
 const Pagination = ({ pageSize, currentPage, onPageChange, itemsCount }) => {
   const numberOfPages = Math.ceil(itemsCount / pageSize);
@@ -21,17 +19,15 @@ const Pagination = ({ pageSize, currentPage, onPageChange, itemsCount }) => {
   if (numberOfPages === 1 || numberOfPages === 0) return null;
   return (
     <PaginationContainer>
-      {pages.map((page) =>
-        page === currentPage ? (
-          <ActiveItem onClick={() => onPageChange(page)} key={page}>
-            {page}
-          </ActiveItem>
-        ) : (
-          <PaginateItem onClick={() => onPageChange(page)} key={page}>
-            {page}
-          </PaginateItem>
-        )
-      )}
+      {pages.map((page) => (
+        <PaginateItem
+          active={page === currentPage}
+          onClick={() => onPageChange(page)}
+          key={page}
+        >
+          {page}
+        </PaginateItem>
+      ))}
     </PaginationContainer>
   );
 };

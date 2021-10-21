@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  * Render a <Input> component
@@ -8,6 +8,8 @@ import PropTypes from "prop-types";
  * @param {String} props.name        The name of the input.
  * @param {String} props.id          The id of the input.
  * @param {String} props.placeHolder The place holder of the input.
+ *
+ * @return {JSX.Element}
  */
 const Input = ({ type, name, id, placeHolder }) => {
   return <input type={type} name={name} id={id} placeholder={placeHolder} />;

@@ -1,17 +1,19 @@
-import { ArticleSection } from "../Articles/articles.style";
-import {
-  Container,
-  FeedUl,
-  FeedLi,
-  MediaContainer,
-} from "components/Home/homeStyle";
 import Articles from "components/Articles/Articles";
 import Banner from "components/Banner/Banner";
-import React, { useState } from "react";
+import {
+  Container,
+  FeedLi,
+  FeedUl,
+  MediaContainer,
+} from "components/Home/home.style";
 import Tags from "components/Tags/Tags";
+import React, { useState } from "react";
+import { ArticleSection } from "../Articles/articles.style";
 
 /**
  * Render a <Home> component
+ *
+ * @return {JSX.Element}
  */
 const Home = () => {
   const [tag, setTag] = useState("");

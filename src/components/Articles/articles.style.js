@@ -1,3 +1,5 @@
+import colors from "services/colors";
+import mediaQueries from "services/mediaQueries";
 import styled from "styled-components";
 
 export const ArticleHeader = styled.div`
@@ -9,15 +11,15 @@ export const ArticleSubContainer = styled.div`
   flex-direction: column;
 `;
 export const ArticleUser = styled.div`
-  color: #5cb85c;
+  color: ${colors.moderateLimeGreen};
   cursor: pointer;
   &:hover {
-    color: #09733a;
+    color: colors[darkCyan_limeGreen];
     text-decoration: underline;
   }
 `;
 export const ArticleDate = styled.div`
-  color: #bbb;
+  color: ${colors.gray};
   font-size: 0.8rem;
 `;
 export const ArticleUserImage = styled.div`
@@ -46,12 +48,12 @@ export const Article = styled.div`
   padding: 1.5rem 0;
 `;
 export const ArticleDescription = styled.div`
-  color: #999;
+  color: ${colors.hardGray};
   cursor: pointer;
   margin-bottom: 0.9rem;
 `;
 export const ArticleReadMore = styled.div`
-  color: #999;
+  color: ${colors.hardGray};
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 300;
@@ -59,7 +61,7 @@ export const ArticleReadMore = styled.div`
 export const ArticleSection = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: 550px) {
+  @media (max-width: ${mediaQueries.mobile}) {
     flex-direction: column;
   }
 `;
@@ -69,7 +71,7 @@ export const ArticleContainer = styled.div`
 `;
 export const NotFound = styled.div`
   border: none;
-  color: #373a3c;
+  color: colors[softBlack];
   margin: 1rem 3rem;
 `;
 export const Container = styled.div`
