@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import colors from "../../../services/colors";
+import colors from 'style/colors';
+import styled from 'styled-components';
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -7,6 +7,7 @@ export const PaginationContainer = styled.div`
   cursor: default;
   margin: 0 2rem;
 `;
+
 export const PaginateItem = styled.div`
   display: flex;
   justify-content: center;
@@ -18,9 +19,11 @@ export const PaginateItem = styled.div`
   border: 0.063rem solid ${colors.veryLightGray};
   width: 2rem;
   height: 2rem;
+
   &:hover {
     background-color: ${colors.veryLightGray};
   }
+
   &:active {
     border: 0.063rem solid ${colors.black};
   }

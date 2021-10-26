@@ -1,14 +1,14 @@
-import Articles from "components/Articles/Articles";
-import Banner from "components/Banner/Banner";
+import Articles from 'components/Articles/Articles';
+import Banner from 'components/Banner/Banner';
 import {
   Container,
   FeedLi,
   FeedUl,
   MediaContainer,
-} from "components/Home/home.style";
-import Tags from "components/Tags/Tags";
-import React, { useState } from "react";
-import { ArticleSection } from "../Articles/articles.style";
+  SubContainer,
+} from 'components/Home/home.style';
+import Tags from 'components/Tags/Tags';
+import React, { useState } from 'react';
 
 /**
  * Render a <Home> component
@@ -16,21 +16,21 @@ import { ArticleSection } from "../Articles/articles.style";
  * @return {JSX.Element}
  */
 const Home = () => {
-  const [tag, setTag] = useState("");
-  const [unClick, setUnClick] = useState(false);
+  const [tag, setTag] = useState('');
+  const [clicked, setClicked] = useState(false);
 
   /**
-   *Set the new tag name and check if the new tag is the same.
+   * Set the new tag name and check if the new tag is the same.
    *
    * @param {string} tagName The name of selected tag.
    */
-  const handleTag = (tagName) => {
+  const onTagChange = (tagName) => {
     if (tag === tagName) {
-      setTag("");
-      setUnClick(true);
+      setTag('');
+      setClicked(true);
     } else {
       setTag(tagName);
-      setUnClick(false);
+      setClicked(false);
     }
   };
 
@@ -38,15 +38,17 @@ const Home = () => {
     <Container>
       <Banner />
       <MediaContainer>
-        <div>
+        <SubContainer>
           <FeedUl>
             <FeedLi>Global Feed</FeedLi>
           </FeedUl>
-          <ArticleSection>
-            <Articles tag={tag} />
-          </ArticleSection>
-        </div>
-        <Tags onTagChange={(tagName) => handleTag(tagName)} unClick={unClick} />
+          <Articles tag={tag} />
+        </SubContainer>
+        <Tags
+          onTagChange={(tagName) => onTagChange(tagName)}
+          clicked={clicked}
+          selectedTag={tag}
+        />
       </MediaContainer>
     </Container>
   );

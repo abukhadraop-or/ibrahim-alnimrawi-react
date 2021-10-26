@@ -1,9 +1,10 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 /**
  * Render a <Input> component
  *
+ * @param {Object} props             The props object.
  * @param {String} props.type        The type of the input.
  * @param {String} props.name        The name of the input.
  * @param {String} props.id          The id of the input.
@@ -11,9 +12,9 @@ import React from "react";
  *
  * @return {JSX.Element}
  */
-const Input = ({ type, name, id, placeHolder }) => {
-  return <input type={type} name={name} id={id} placeholder={placeHolder} />;
-};
+const Input = ({ type, name, id, placeHolder }) => (
+  <input type={type} name={name} id={id} placeholder={placeHolder} />
+);
 
 export default Input;
 
@@ -22,4 +23,10 @@ Input.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   placeHolder: PropTypes.string,
+};
+Input.defaultProps = {
+  type: '',
+  name: '',
+  id: '',
+  placeHolder: '',
 };

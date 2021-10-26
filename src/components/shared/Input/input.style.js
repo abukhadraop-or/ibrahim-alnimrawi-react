@@ -1,6 +1,6 @@
-import Input from "components/Shared/Input/Input";
-import styled from "styled-components";
-import colors from "../../../services/colors";
+import Input from 'components/shared/Input/Input';
+import colors from 'style/colors';
+import styled from 'styled-components';
 
 export const SubmitButton = styled.button`
   background-color: ${colors.moderateLimeGreen};

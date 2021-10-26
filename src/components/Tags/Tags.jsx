@@ -1,22 +1,24 @@
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { getTags } from "../../services/fakeTags";
-import { NotFound, PopTags, Tag, TagsContainer, TagsDiv } from "./tags.style";
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { getTags } from 'services/fake-tags';
+import { NotFound, PopTags, Tag, TagsContainer, TagsDiv } from './tags.style';
 
 /**
  * Render a <Input> component
  *
+ * @param {Object} props               The props object.
  * @param {Function} props.onTagChange Function to handle tag change.
- * @param {Boolean} props.unClick      Boolean to check if tag un clicked.
+ * @param {Boolean}  props.unClick     Boolean to check if tag clicked.
  *
  * @return {JSX.Element}
  */
-const Tags = ({ onTagChange, unClick, selcet }) => {
+const Tags = ({ onTagChange, clicked, selectedTag }) => {
   const [tags, setTags] = useState([]);
-  const [select, setSelect] = useState("");
+
+  // handle initial state.
   useEffect(() => {
     const data = async () => {
-      let response = await getTags();
+      const response = await getTags();
       const result = response.tags;
       setTags(result);
     };
@@ -31,11 +33,10 @@ const Tags = ({ onTagChange, unClick, selcet }) => {
       <PopTags>
         {tags.map((tag) => (
           <Tag
-            selected={select === tag && !unClick}
+            selected={tag === selectedTag && !clicked}
             key={tag}
             onClick={() => {
               onTagChange(tag);
-              setSelect(tag);
             }}
           >
             {tag}
@@ -49,5 +50,12 @@ export default Tags;
 
 Tags.propTypes = {
   onTagChange: PropTypes.func,
-  unClick: PropTypes.bool,
+  clicked: PropTypes.bool,
+  selectedTag: PropTypes.string,
+};
+
+Tags.defaultProps = {
+  onTagChange: () => null,
+  clicked: false,
+  selectedTag: '',
 };

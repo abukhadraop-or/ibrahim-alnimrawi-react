@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import colors from "../../services/colors";
+import colors from 'style/colors';
+import styled from 'styled-components';
+
 export const BannerDiv = styled.div`
   align-items: center;
   background-color: ${colors.moderateLimeGreen};
@@ -13,12 +14,14 @@ export const BannerDiv = styled.div`
   padding-top: 0;
   padding: 1rem;
 `;
+
 export const BannerH1 = styled.h1`
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   text-shadow: 0 0.063rem 0.188rem rgb(0 0 0 / 30%);
 `;
+
 export const BannerP = styled.p`
   font-size: 1.5rem;
   font-weight: 300;

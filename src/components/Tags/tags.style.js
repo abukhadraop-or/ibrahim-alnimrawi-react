@@ -1,6 +1,7 @@
-import mediaQueries from "services/mediaQueries";
-import styled from "styled-components";
-import colors from "../..//services/colors";
+import colors from 'style/colors';
+import mediaQueries from 'style/media-queries';
+import styled from 'styled-components';
+
 export const TagsDiv = styled.div`
   align-items: center;
   border-radius: 0.25rem;
@@ -11,6 +12,7 @@ export const TagsDiv = styled.div`
   position: relative;
   width: 8rem;
 `;
+
 export const Tag = styled.div`
   align-items: center;
   background-color: ${(props) =>
@@ -33,6 +35,7 @@ export const PopTags = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 export const TagsContainer = styled.div`
   background-color: ${colors.veryLightGray_mostlyWhite};
   display: flex;
@@ -42,11 +45,13 @@ export const TagsContainer = styled.div`
   margin-right: 3rem;
   max-width: 20rem;
   padding-bottom: 2rem;
+
   @media (max-width: ${mediaQueries.mobile}) {
     margin: 0 auto;
     width: 100%;
   }
 `;
+
 export const NotFound = styled.div`
   color: ${colors.veryDarkGrayishBlue};
   margin: 1rem 3rem;

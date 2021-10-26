@@ -6,21 +6,24 @@ import {
   MenuLink,
   NavContainer,
   RightLink,
-} from "components/Navbar/navbar.style";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
+} from 'components/Navbar/navbar.style';
+import React, { useState } from 'react';
 
 /**
  * Render a <Navbar> component
  *
- * @param {Array} props.links Array of the links.
- *
  * @return {JSX.Element}
  */
-const NavBar = ({ links }) => {
+const NavBar = () => {
   const [menu, setMenu] = useState(false);
+  const links = [
+    { name: 'Home', to: '/Home' },
+    { name: 'Sign in', to: '/SignIn' },
+    { name: 'Sign up', to: '/SignUp' },
+  ];
+
   return (
-    <React.Fragment>
+    <>
       <NavContainer>
         <LeftLink to="/"> Conduit </LeftLink>
         {links.map((link) => (
@@ -45,12 +48,8 @@ const NavBar = ({ links }) => {
           </Menu>
         </LinksContainer>
       )}
-    </React.Fragment>
+    </>
   );
 };
 
 export default NavBar;
-
-NavBar.propTypes = {
-  links: PropTypes.arrayOf(Object),
-};

@@ -1,6 +1,6 @@
-import { ReactComponent as HeartImg } from "assets/images/heart.svg";
-import styled from "styled-components";
-import colors from "../../../services/colors";
+import { ReactComponent as HeartImg } from 'assets/images/heart.svg';
+import colors from 'style/colors';
+import styled from 'styled-components';
 
 export const Heart = styled(HeartImg)`
   width: 1.563rem;

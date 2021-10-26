@@ -1,11 +1,9 @@
-import LikeButton from "components/Shared/LikeButton/LikeButton";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import {
-  getArticlesNumber,
-  paginateSlice,
-} from "../../services/fakeArticlesService";
-import Pagination from "../Shared/Pagination/Pagination";
+import LikeButton from 'components/shared/LikeButton/LikeButton';
+import Pagination from 'components/shared/Pagination/Pagination';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { getArticles } from 'services/fake-articles-service';
+import { formatDate } from 'utils/format-date';
 import {
   Article,
   ArticleContainer,
@@ -19,23 +17,12 @@ import {
   ArticleUserImage,
   Container,
   NotFound,
-} from "./articles.style";
-
-/**
- * Handle date format.
- *
- * @param {string} originalDate Article created date.
- *
- * @return {string}             Date in the right format.
- */
-const handleDate = (originalDate) => {
-  const date = new Date(Date.parse(originalDate));
-  return date.toDateString();
-};
+} from './articles.style';
 
 /**
  * Render a <Articles> component
  *
+ * @param {Object} props     The props object.
  * @param {String} props.tag The name of the current tag.
  *
  * @return {JSX.Element}
@@ -44,44 +31,50 @@ const Articles = ({ tag }) => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const [numberOfArticles, setNumberOfArticles] = useState(0);
-  const handlePageChange = (page) => {
-    setPage(page);
-    setArticles(paginateSlice(page, 10));
-  };
 
+  /**
+   * Set the page to the selected page.
+   *
+   * @param {Number} selectedPage The number of selected page.
+   */
+  const onPageChange = (selectedPage) => setPage(selectedPage);
+
+  // handle initial state.
   useEffect(() => {
     const data = async () => {
-      let response = await paginateSlice(tag, page, 10);
-      setArticles(response);
-      setNumberOfArticles(getArticlesNumber);
+      const response = await getArticles(tag, page, 10);
+      setArticles(response.articles);
+      setNumberOfArticles(response.articlesCount);
     };
-
     data();
-  }, [page, tag]);
+  }, [page]);
 
+  // handle filtering.
   useEffect(() => {
-    if (!!tag) {
-      const data = paginateSlice(tag, page, 10);
-      setNumberOfArticles(data[0].length);
+    setPage(1);
+    const data = async () => {
+      const response = await getArticles(tag, page, 10);
+      setArticles(response.articles);
+      setNumberOfArticles(response.articlesCount);
+    };
+    data();
+  }, [tag]);
 
-      setArticles(data[0]);
-    }
-  }, [tag, numberOfArticles, page]);
   return (
     <Container>
       {!numberOfArticles && <NotFound>No articles are here... yet.</NotFound>}
       {!!numberOfArticles && (
         <Article>
-          {articles.length > 0 &&
+          {numberOfArticles > 0 &&
             articles.map((article) => (
               <ArticleContainer key={article.slug}>
                 <ArticleHeader>
-                  <ArticleUserImage ImgSrc={article?.author?.image} />
+                  <ArticleUserImage ImgSrc={article.author.image} />
                   <ArticleSubContainer>
-                    <ArticleUser>{article?.author?.username}</ArticleUser>
-                    <ArticleDate>{handleDate(article?.createdAt)}</ArticleDate>
+                    <ArticleUser>{article.author.username}</ArticleUser>
+                    <ArticleDate>{formatDate(article.createdAt)}</ArticleDate>
                   </ArticleSubContainer>
-                  <LikeButton count={article?.favoritesCount}></LikeButton>
+                  <LikeButton count={article.favoritesCount} />
                 </ArticleHeader>
                 <ArticleTitle>{article.title}</ArticleTitle>
                 <ArticleDescription>{article.description}</ArticleDescription>
@@ -92,7 +85,7 @@ const Articles = ({ tag }) => {
       )}
 
       <Pagination
-        onPageChange={handlePageChange}
+        onPageChange={onPageChange}
         currentPage={page}
         pageSize={10}
         itemsCount={numberOfArticles}
@@ -105,4 +98,8 @@ export default Articles;
 
 Articles.propTypes = {
   tag: PropTypes.string,
+};
+
+Articles.defaultProps = {
+  tag: '',
 };
