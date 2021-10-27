@@ -6,11 +6,11 @@ import { PaginateItem, PaginationContainer } from './pagination.style';
 /**
  * Render a <Pagination> component
  *
- * @param {Object} props                 The props object.
- * @param {Number} props.pageSize        The number of articles per page.
- * @param {Number} props.currentPage     The current page number.
- * @param {Function} props.onPageChange  Function to handle page change.
- * @param {Number} props.itemCount       The number of articles.
+ * @param {Object}   props                 The props object.
+ * @param {Number}   props.pageSize        The number of articles per page.
+ * @param {Number}   props.currentPage     The current page number.
+ * @param {Function} props.onPageChange    Function to handle page change.
+ * @param {Number}   props.itemCount       The number of articles.
  *
  * @return {JSX.Element}
  */
