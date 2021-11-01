@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp /> should match the snapshot 1`] = `
+<div>
+  this is sign up
+</div>
+`;
+
+exports[`<SignUp /> should match the snapshot be 1`] = `
+<div>
+  this is sign up
+</div>
+`;

@@ -589,7 +589,7 @@ const articles = [
   },
 ];
 
-const paginate = (data, pageNumber, pageSize) => {
+export const paginate = (data, pageNumber, pageSize) => {
   const start = (pageNumber - 1) * pageSize;
   const end = start + pageSize;
   return {

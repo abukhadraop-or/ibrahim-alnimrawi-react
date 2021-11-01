@@ -1,6 +1,6 @@
 import { FormInput, SubmitButton } from 'components/shared/Input/input.style';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 
 /**
  * Render a <SignIn> component
@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
  * @return {JSX.Element}
  */
 const SignIn = () => (
-  <div>
+  <BrowserRouter>
     <h1>Sign In</h1>
     <NavLink to="/SignUp">Need an account? </NavLink>
     <FormInput type="email" placeHolder="Email" name="email" id="email" />
@@ -19,7 +19,7 @@ const SignIn = () => (
       id="password"
     />
     <SubmitButton>Sign in</SubmitButton>
-  </div>
+  </BrowserRouter>
 );
 
 export default SignIn;

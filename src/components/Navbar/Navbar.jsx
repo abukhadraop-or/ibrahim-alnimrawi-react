@@ -8,6 +8,7 @@ import {
   RightLink,
 } from 'components/Navbar/navbar.style';
 import React, { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 /**
  * Render a <Navbar> component
@@ -23,7 +24,7 @@ const NavBar = () => {
   ];
 
   return (
-    <>
+    <BrowserRouter>
       <NavContainer>
         <LeftLink to="/"> Conduit </LeftLink>
         {links.map((link) => (
@@ -48,7 +49,7 @@ const NavBar = () => {
           </Menu>
         </LinksContainer>
       )}
-    </>
+    </BrowserRouter>
   );
 };
 

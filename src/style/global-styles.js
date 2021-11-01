@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+/* istanbul ignore next */
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: Serif;

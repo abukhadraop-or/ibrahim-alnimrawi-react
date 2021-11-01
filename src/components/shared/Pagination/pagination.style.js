@@ -7,7 +7,7 @@ export const PaginationContainer = styled.div`
   cursor: default;
   margin: 0 2rem;
 `;
-
+/* istanbul ignore next */
 export const PaginateItem = styled.div`
   display: flex;
   justify-content: center;

@@ -17,23 +17,14 @@ import React, { useState } from 'react';
  */
 const Home = () => {
   const [tag, setTag] = useState('');
-  const [clicked, setClicked] = useState(false);
 
   /**
    * Set the new tag name and check if the new tag is the same.
    *
    * @param {string} tagName The name of selected tag.
    */
-  const onTagChange = (tagName) => {
-    if (tag === tagName) {
-      setTag('');
-      setClicked(true);
-    } else {
-      setTag(tagName);
-      setClicked(false);
-    }
-  };
-
+  const onTagChange = (tagName) =>
+    tag === tagName ? setTag('') : setTag(tagName);
   return (
     <Container>
       <Banner />
@@ -46,7 +37,6 @@ const Home = () => {
         </SubContainer>
         <Tags
           onTagChange={(tagName) => onTagChange(tagName)}
-          clicked={clicked}
           selectedTag={tag}
         />
       </MediaContainer>

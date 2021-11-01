@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignIn /> should match the snapshot 1`] = `
+Array [
+  <h1>
+    Sign In
+  </h1>,
+  <a
+    aria-current={null}
+    href="/SignUp"
+    onClick={[Function]}
+  >
+    Need an account? 
+  </a>,
+  <input
+    id="email"
+    name="email"
+    placeholder="Email"
+    type="email"
+  />,
+  <input
+    id="password"
+    name="password"
+    placeholder="Password"
+    type="password"
+  />,
+  .c0 {
+  background-color: #5cb85c;
+  border: none;
+  color: #ffffff;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+<button
+    className="c0"
+  >
+    Sign in
+  </button>,
+]
+`;
+
+exports[`<SignIn /> should match the snapshot be 1`] = `
+Array [
+  <h1>
+    Sign In
+  </h1>,
+  <a
+    aria-current={null}
+    href="/SignUp"
+    onClick={[Function]}
+  >
+    Need an account? 
+  </a>,
+  <input
+    id="email"
+    name="email"
+    placeholder="Email"
+    type="email"
+  />,
+  <input
+    id="password"
+    name="password"
+    placeholder="Password"
+    type="password"
+  />,
+  .c0 {
+  background-color: #5cb85c;
+  border: none;
+  color: #ffffff;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+<button
+    className="c0"
+  >
+    Sign in
+  </button>,
+]
+`;

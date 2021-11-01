@@ -27,6 +27,7 @@ export const ArticleDate = styled.div`
   font-size: 0.8rem;
 `;
 
+/* istanbul ignore next */
 export const ArticleUserImage = styled.div`
   background-image: url(${(props) => props.ImgSrc});
   background-size: cover;

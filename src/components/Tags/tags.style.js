@@ -13,6 +13,7 @@ export const TagsDiv = styled.div`
   width: 8rem;
 `;
 
+/* istanbul ignore next */
 export const Tag = styled.div`
   align-items: center;
   background-color: ${(props) =>

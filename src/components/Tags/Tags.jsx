@@ -6,13 +6,13 @@ import { NotFound, PopTags, Tag, TagsContainer, TagsDiv } from './tags.style';
 /**
  * Render a <Input> component
  *
- * @param {Object} props               The props object.
+ * @param {Object}   props             The props object.
  * @param {Function} props.onTagChange Function to handle tag change.
- * @param {Boolean}  props.unClick     Boolean to check if tag clicked.
+ * @param {String}   props.selectedTag The selected tag.
  *
  * @return {JSX.Element}
  */
-const Tags = ({ onTagChange, clicked, selectedTag }) => {
+const Tags = ({ onTagChange, selectedTag }) => {
   const [tags, setTags] = useState([]);
 
   // handle initial state.
@@ -33,7 +33,7 @@ const Tags = ({ onTagChange, clicked, selectedTag }) => {
       <PopTags>
         {tags.map((tag) => (
           <Tag
-            selected={tag === selectedTag && !clicked}
+            selected={tag === selectedTag}
             key={tag}
             onClick={() => {
               onTagChange(tag);
@@ -50,12 +50,10 @@ export default Tags;
 
 Tags.propTypes = {
   onTagChange: PropTypes.func,
-  clicked: PropTypes.bool,
   selectedTag: PropTypes.string,
 };
 
 Tags.defaultProps = {
   onTagChange: () => null,
-  clicked: false,
   selectedTag: '',
 };
