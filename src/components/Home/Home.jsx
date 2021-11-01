@@ -27,10 +27,6 @@ const Home = () => {
    */
   const onTagChange = (tagName) =>
     tag === tagName ? setTag('') : setTag(tagName);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4c1fa34cad8f09284c8311f27546f0dc31e8c4f6
   return (
     <Container>
       <Banner />
