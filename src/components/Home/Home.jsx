@@ -22,9 +22,15 @@ const Home = () => {
    * Set the new tag name and check if the new tag is the same.
    *
    * @param {string} tagName The name of selected tag.
+   *
+   * @returns {Boolean} Boolean to check if new tag selected.
    */
   const onTagChange = (tagName) =>
     tag === tagName ? setTag('') : setTag(tagName);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c1fa34cad8f09284c8311f27546f0dc31e8c4f6
   return (
     <Container>
       <Banner />
