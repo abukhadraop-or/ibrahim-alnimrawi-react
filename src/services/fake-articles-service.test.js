@@ -2,7 +2,7 @@ import { getArticles, paginate } from './fake-articles-service';
 
 describe('fake articles service', () => {
   describe('paginate function', () => {
-    it('should be', () => {
+    it('should be same as expected constant', () => {
       const data = [
         {
           articles: [
@@ -55,6 +55,7 @@ describe('fake articles service', () => {
         ],
         articlesCount: 23,
       };
+
       expect(paginate(data, pageNumber, pageSize)).toEqual(expected);
     });
   });
@@ -66,6 +67,7 @@ describe('fake articles service', () => {
       const pageSize = 10;
       const result = await getArticles(tag, pageNumber, pageSize);
       const count = result.articlesCount;
+
       expect(count).toBe(23);
     });
 
@@ -75,6 +77,7 @@ describe('fake articles service', () => {
       const pageSize = 10;
       const result = await getArticles(tag, pageNumber, pageSize);
       const count = result.articlesCount;
+
       expect(count).toBe(0);
     });
   });

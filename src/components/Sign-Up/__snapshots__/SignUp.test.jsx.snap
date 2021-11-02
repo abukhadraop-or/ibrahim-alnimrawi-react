@@ -5,9 +5,3 @@ exports[`<SignUp /> should match the snapshot 1`] = `
   this is sign up
 </div>
 `;
-
-exports[`<SignUp /> should match the snapshot be 1`] = `
-<div>
-  this is sign up
-</div>
-`;

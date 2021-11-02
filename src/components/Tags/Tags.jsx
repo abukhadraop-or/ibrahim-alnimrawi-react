@@ -13,14 +13,13 @@ import { NotFound, PopTags, Tag, TagsContainer, TagsDiv } from './tags.style';
  * @return {JSX.Element}
  */
 const Tags = ({ onTagChange, selectedTag }) => {
-  const [tags, setTags] = useState([]);
-
+  const [allTags, setAllTags] = useState([]);
   // handle initial state.
   useEffect(() => {
     const data = async () => {
       const response = await getTags();
       const result = response.tags;
-      setTags(result);
+      setAllTags(result);
     };
 
     data();
@@ -29,9 +28,9 @@ const Tags = ({ onTagChange, selectedTag }) => {
   return (
     <TagsContainer>
       <TagsDiv>Popular Tags</TagsDiv>
-      {!tags && <NotFound> No tags are here...yet</NotFound>}
+      {!allTags.length && <NotFound> No tags are here...yet</NotFound>}
       <PopTags>
-        {tags.map((tag) => (
+        {allTags.map((tag) => (
           <Tag
             selected={tag === selectedTag}
             key={tag}
@@ -54,6 +53,6 @@ Tags.propTypes = {
 };
 
 Tags.defaultProps = {
-  onTagChange: () => null,
+  onTagChange: null,
   selectedTag: '',
 };

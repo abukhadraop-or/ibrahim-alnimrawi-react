@@ -1,25 +1,25 @@
 const articles = [
-  {
-    articles: [
-      {
-        slug: 'how-to-train-your-dragon-1',
-        title:
-          'How to train your dragon How to train your dragon How to train your dragon',
-        description:
-          'Ever wonder how? wfhdghkv whbdskvwdd hgkdvd  vkdwhsgvdhsvhds dughdsuoug w8dug8ud gds8u 8u8go8ods8u dsus8gvu sd',
-        body: 'It takes a Jacobian',
-        tagList: ['reactjs', 'dragons', 'training'],
-        createdAt: '2016-02-18T03:22:56.637Z',
-        updatedAt: '2016-02-18T03:48:35.824Z',
-        favorited: false,
-        favoritesCount: 25,
-        author: {
-          username: 'jake',
-          bio: 'I work at statefarm',
-          image: 'https://i.stack.imgur.com/xHWG8.jpg',
-          following: false,
+    {
+      articles: [
+        {
+          slug: 'how-to-train-your-dragon-1',
+          title:
+            'How to train your dragon How to train your dragon How to train your dragon',
+          description:
+            'Ever wonder how? wfhdghkv whbdskvwdd hgkdvd  vkdwhsgvdhsvhds dughdsuoug w8dug8ud gds8u 8u8go8ods8u dsus8gvu sd',
+          body: 'It takes a Jacobian',
+          tagList: ['reactjs', 'dragons', 'training'],
+          createdAt: '2016-02-18T03:22:56.637Z',
+          updatedAt: '2016-02-18T03:48:35.824Z',
+          favorited: false,
+          favoritesCount: 25,
+          author: {
+            username: 'jake',
+            bio: 'I work at statefarm',
+            image: 'https://i.stack.imgur.com/xHWG8.jpg',
+            following: false,
+          },
         },
-      },
       {
         slug: 'how-to-train-your-dragon-2',
         title:

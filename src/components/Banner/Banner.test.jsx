@@ -9,6 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Banner component', () => {
   it('should match snapshot', () => {
     const tree = renderer.create(<Banner />).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });

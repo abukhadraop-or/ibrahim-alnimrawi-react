@@ -10,6 +10,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('<SignIn />', () => {
   it('should match the snapshot', () => {
     const tree = renderer.create(<SignIn />).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
